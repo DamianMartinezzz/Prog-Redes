@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Nombre"
+        android:layout_width="132dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="43dp"
+        android:text="Damian Martinez"
+        app:layout_constraintBottom_toTopOf="@+id/Usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/passw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre" />
+
+    <EditText
+        android:id="@+id/passw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/NoCumple"
+        app:layout_constraintStart_toStartOf="@+id/Usuario"
+        app:layout_constraintTop_toBottomOf="@+id/Usuario" />
+
+    <Button
+        android:id="@+id/BtnValidar"
+        android:layout_width="102dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="318dp"
+        android:text="Ingresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intentos" />
+
+    <TextView
+        android:id="@+id/NoCumple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="44dp"
+        android:text="El usuario o la contraseña no cumple con los requisitos"
+        app:layout_constraintBottom_toTopOf="@+id/intentos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passw" />
+
+    <TextView
+        android:id="@+id/intentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnValidar"
+        app:layout_constraintEnd_toEndOf="@+id/BtnValidar"
+        app:layout_constraintStart_toStartOf="@+id/BtnValidar"
+        app:layout_constraintTop_toBottomOf="@+id/NoCumple" />
+</androidx.constraintlayout.widget.ConstraintLayout>
