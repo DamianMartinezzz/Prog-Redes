@@ -1,5 +1,9 @@
+
 <?php
         include 'persona.php';
+        include 'conexion.php';
+        $conexion = new Conexion();
+        $usuario =new ClasePersona();
         ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +13,8 @@
 <body>
     <h1>ABM de Usuarios</h1>
 
-    <!-- Formulario para dar de alta un nuevo usuario -->
     <h2>Alta de Usuario</h2>
-    <form method="post">
+    <form action="persona.php" method="post" action="persona.php">
         <input type="text" name="Userid" placeholder="User ID" required>
         <input type="text" name="Name" placeholder="Nombre" required>
         <input type="text" name="Surname" placeholder="Apellido" required>
@@ -22,24 +25,19 @@
         <input type="date" name="Birthdate" required>
         <input type="text" name="Label" placeholder="Etiqueta" required>
         <input type="text" name="Nickname" placeholder="Alias" required>
-        <input type="submit" name="alta" value="Alta">
+        <input type="submit" name="alta" value="Alta" onclick='<?php $conexion->insertar
+        ?>'>
+
     </form>
 
-    <!-- Formulario para dar de baja un usuario por ID -->
     <h2>Baja de Usuario</h2>
-    <form method="post">
+    <form action="persona.php" method="post">
         <input type="number" name="Id" placeholder="ID del usuario a eliminar" required>
-        <input type="submit" name="baja" value="Baja">
-        <?php
-        $persona = new ClasePersona();
-
-        $persona->EliminarUsuario();
-        ?>
+        <input type="submit" name="baja" value="Baja" onclick=''>
     </form>
 
-    <!-- Formulario para modificar un usuario por ID -->
     <h2>Modificación de Usuario</h2>
-    <form method="post">
+    <form action="persona.php" method="post">
         <input type="number" name="Id" placeholder="ID del usuario a modificar" required>
         <input type="text" name="Userid" placeholder="User ID" required>
         <input type="text" name="Name" placeholder="Nombre" required>
@@ -51,15 +49,10 @@
         <input type="date" name="Birthdate" required>
         <input type="text" name="Label" placeholder="Etiqueta" required>
         <input type="text" name="Nickname" placeholder="Alias" required>
-        <input type="submit" name="modificacion" value="Modificar">
-        <?php
-        $persona = new ClasePersona();
-
-        $persona->ModificarUsuarios();
-        ?>
+        <input type="submit" name="modificacion" value="Modificar" onclick=''>
+        
     </form>
 
-    <!-- Mostrar la lista de usuarios -->
     <h2>Lista de Usuarios</h2>
     <table border="1">
         <tr>
@@ -75,11 +68,11 @@
             <th>Etiqueta</th>
             <th>Alias</th>
         </tr>
-        <?php
-        $persona = new ClasePersona();
-
-        $persona->ObtenerUsuarios();
+        <?php 
+        
+        $conexion->obtenerUsuario();
         ?>
+        
     </table>
 </body>
 </html>

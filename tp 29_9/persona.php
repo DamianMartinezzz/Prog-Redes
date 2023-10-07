@@ -1,6 +1,6 @@
 <?php
-include 'conexion.php';
-class ClasePersona{
+   
+class ClasePersona {
 
 public $ID;
 public $UserID;
@@ -13,11 +13,12 @@ public $Web;
 public $Birthdate;
 public $Label;
 public $Nickname;
-
+public $querys;
 public function __construct() {
+    
     if (isset($_POST['Id'])) {
         $this->ID = $_POST['Id'];
-    }
+    } 
     if (isset($_POST['Userid'])) {
         $this->UserID = $_POST['Userid'];
     }
@@ -47,38 +48,13 @@ public function __construct() {
     }
     if (isset($_POST['Nickname'])) {
         $this->Nickname = $_POST['Nickname'];
-}
-}
-
-
-function ObtenerUsuarios() {
-    // Realizar una consulta a la base de datos y obtener el resultado
-    $querys=new Conexion();
-    $querys->ObtenerUsuario();
+    }  
 }
 
-function EliminarUsuario(){
-    $querys=new Conexion();
-    $querys->EliminarUsuarioPorID($this->ID);
+
+
+
+
+
 }
-
-function ModificarUsuarios(){
-
-    $usuarios = new ClasePersona();
-    $usuarios->ID =$this->ID;
-    $usuarios->Name =$this->Name;
-    $usuarios->UserID =$this->UserID;
-    $usuarios->Surname =$this->Surname;
-    $usuarios->Phonenumber =$this->Phonenumber;
-    $usuarios->Company =$this->Company;
-    $usuarios->Address =$this->Address;
-    $usuarios->Web =$this->Web;
-    $usuarios->Birthdate =$this->Birthdate;
-    $usuarios->Label =$this->Label;
-    $usuarios->Nickname =$this->Nickname;
-}
-}   
-
-
-
 ?>
